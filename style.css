@@ -17,4 +17,45 @@ body {
   color: #333;
   padding: 3rem;
   box-sizing: border-box;
+  background-color: thistle;
+}
+div {
+  font-size: 2rem;
+}
+img {
+  max-width: 40rem;
+}
+.header {
+  text-align: center;
+}
+.faq {
+  max-width: 50rem;
+  margin: 2rem auto;
+}
+.faq__item {
+  border: 1px solid #6e9b04;
+}
+.faq-title {
+  display: block;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+.faq-title:hover {
+  background-color: orangered;
+}
+.faq__text {
+  display: none;
+}
+.faq__input {
+  width: 0;
+  height: 0;
+  appearance: none;
+  position: absolute;
+}
+.faq__input:checked + .faq__text {
+  display: block;
+}
+.faq__text-entries {
+  text-align: center;
 }
