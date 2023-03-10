@@ -35,27 +35,53 @@ img {
 .faq__item {
   border: 1px solid #6e9b04;
 }
-.faq-title {
+.faq__title {
   display: block;
   padding: 1rem 2rem;
   cursor: pointer;
-  transition: 0.2s ease-out;
+  transition: 1s ease-out;
 }
-.faq-title:hover {
+.faq__title:hover {
   background-color: orangered;
 }
 .faq__text {
   display: none;
+  transition: 1s ease-out;
+  transition: all;
 }
 .faq__input {
   width: 0;
   height: 0;
   appearance: none;
   position: absolute;
+  transition: 1s ease-out;
 }
-.faq__input:checked + .faq__text {
+.faq__input:checked ~ .faq__title {
+  background-color: orangered;
+}
+.faq__input:checked ~ .faq__text {
   display: block;
+  animation-name: imageMove;
+  animation-duration: 1s;
+  transition: 1s ease-out;
+}
+.faq__input:hover ~ .faq__text {
+  display: block;
+  animation-name: imageMove;
+  animation-duration: 1s;
+  transition: 1s ease-out;
 }
 .faq__text-entries {
   text-align: center;
+}
+@keyframes imageMove {
+  0% {
+    opacity: 0;
+  }
+  80% {
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
