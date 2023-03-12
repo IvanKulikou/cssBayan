@@ -24,7 +24,13 @@ div {
 }
 img {
   max-width: 40rem;
+  width: 100%;
+  height: auto;
 }
+label {
+  min-width: 50rem;
+}
+
 .header {
   text-align: center;
 }
@@ -178,3 +184,84 @@ img {
 
 /* <div class="arrow-up"></div> */
 /* <div class="arrow-down"></div> */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  body {
+    padding: 1rem;
+  }
+  .faq {
+    margin: 1rem auto;
+  }
+  .faq__title {
+    padding: 0.8rem 1.5rem;
+  }
+  .faq__item {
+    border: 1px solid #6e9b04;
+  }
+  .arrow {
+    margin-top: -1rem;
+    margin-left: 42rem;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid;
+    transform: translate(-4rem, +100px);
+  }
+}
+@media (max-width: 5px) {
+  .arrow {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+  .faq {
+    max-width: 30rem;
+    margin: 0.5rem auto;
+  }
+  .faq__title {
+    padding: 0.5rem 1.2rem;
+  }
+  .arrow {
+    margin-top: -0.8rem;
+    margin-left: 20rem;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid;
+    transform: translate(-3rem, +100px);
+  }
+}
+@media (max-width: 320px) {
+  html {
+    font-size: 30%;
+  }
+  .faq {
+    max-width: 25rem;
+    margin: 0.4rem auto;
+  }
+  .faq__title {
+    padding: 0.4rem 1rem;
+  }
+  .arrow {
+    margin-top: -0.6rem;
+    margin-left: 15rem;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid;
+    transform: translate(-2rem, +100px);
+  }
+  .faq__text-entries {
+    font-size: 0.8rem;
+  }
+}
