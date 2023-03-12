@@ -186,6 +186,10 @@ label {
 /* <div class="arrow-down"></div> */
 
 @media (max-width: 768px) {
+  * {
+    pointer-events: none;
+  }
+
   html {
     font-size: 50%;
   }
