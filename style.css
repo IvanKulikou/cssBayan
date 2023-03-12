@@ -31,22 +31,61 @@ img {
 .faq {
   max-width: 50rem;
   margin: 2rem auto;
+  animation-name: imageMove;
+  animation-duration: 0.1s;
+  transition: 0.1s ease-out;
 }
+.faq:hover {
+  color: orangered;
+}
+/* .faq:not(:hover).arrow {
+  color: orangered;
+  opacity: 0;
+} */
 .faq__item {
   border: 1px solid #6e9b04;
+  animation-name: imageMove;
+  animation-duration: 0.5s;
+  transition: 0.5s ease-out;
+}
+.faq__item-wraper {
+  display: flex;
 }
 .faq__title {
   display: block;
   padding: 1rem 2rem;
   cursor: pointer;
-  transition: 1s ease-out;
+  transition: 0.5s ease-out;
 }
 .faq__title:hover {
-  background-color: orangered;
+  color: orangered;
+}
+
+.faq__title:hover .arrow {
+  animation: animateArrow 0.1s linear both;
+  opacity: 1;
+}
+.faq__title:not(:hover) .arrow {
+  animation: reverseArrow 0.1s linear forwards;
+  opacity: 0.25;
+}
+.arrow {
+  margin-top: -1.5rem;
+  margin-left: 40rem;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid;
+  transform: translate(-5rem, +100px);
+}
+.arrow:hover {
+  animation: animateArrow 0.1s linear both;
 }
 .faq__text {
   display: none;
-  transition: 1s ease-out;
+  animation-name: imageMove;
+  transition: 0.2s ease;
   transition: all;
 }
 .faq__input {
@@ -54,27 +93,58 @@ img {
   height: 0;
   appearance: none;
   position: absolute;
-  transition: 1s ease-out;
+  transition: 0.1s ease;
 }
 .faq__input:checked ~ .faq__title {
-  background-color: orangered;
+  color: orangered;
+  transition: 1s ease;
 }
+.faq__input:checked ~ .faq__title .arrow {
+  color: orangered;
+  transition: 1s ease;
+  animation: animateArrow 0.1s linear both;
+}
+
 .faq__input:checked ~ .faq__text {
-  display: block;
   animation-name: imageMove;
-  animation-duration: 1s;
-  transition: 1s ease-out;
+  animation-duration: 0.5s;
+  transition: 0.5s ease;
+  display: block;
 }
 .faq__input:hover ~ .faq__text {
   display: block;
   animation-name: imageMove;
-  animation-duration: 1s;
-  transition: 1s ease-out;
+  animation-duration: 0.5s;
+  transition: 0.5s ease;
 }
 .faq__text-entries {
+  cursor: pointer;
   text-align: center;
+  animation-name: imageMove;
+  animation-duration: 0.5s;
+  transition: 0.5s ease;
 }
 @keyframes imageMove {
+  0% {
+    opacity: 0;
+    height: 0%;
+  }
+  20% {
+    opacity: 20%;
+  }
+  30% {
+    opacity: 30%;
+  }
+  40% {
+    opacity: 40%;
+  }
+
+  100% {
+    opacity: 1;
+    height: 100%;
+  }
+}
+@keyframes expand {
   0% {
     opacity: 0;
   }
@@ -85,3 +155,26 @@ img {
     opacity: 1;
   }
 }
+/* BUttton */
+/* BUttton */
+/* BUttton */
+
+@keyframes animateArrow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes reverseArrow {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* <div class="arrow-up"></div> */
+/* <div class="arrow-down"></div> */
